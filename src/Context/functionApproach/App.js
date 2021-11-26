@@ -1,5 +1,4 @@
 import { Observer } from 'mobx-react';
-import React from 'react'
 import { useCounterStore } from './counterContext'
 
 const App = () => {
@@ -15,10 +14,12 @@ const App = () => {
             //we can have any components inside the <Observer></Observer>
            ()=>{
             return(
-                    <div>
-                        <button onClick={()=>counterStore.decrement()}> - </button>
-                        <span>{counterStore.count}</span>
-                        <button onClick={()=>counterStore.increment()}> + </button>
+                    <div className='container'>
+                        <div className='app'>
+                        <button className='btn' onClick={()=>counterStore.decrement()}> - </button>
+                        <span className='txt'>{counterStore.count}</span>
+                        <button className='btn' onClick={()=>counterStore.increment()}> + </button>
+                        </div>
                     </div>
             )
            }}
